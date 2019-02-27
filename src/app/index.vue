@@ -4,6 +4,14 @@
   </div>
 </template>
 
-<script src="./app.js" type="text/ecmascript-6"></script>
+<script
+  src="./app.js"
+  type="text/jsx"
+/>
 
-<style rel="stylesheet/scss" lang="scss" scoped></style>
+<style
+  src="./app.scss"
+  rel="stylesheet/scss"
+  lang="scss"
+  scoped
+/>

@@ -9,7 +9,7 @@ const path = require('path')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const webpack = require('webpack')
 
-const resolve = dir =>  path.join(__dirname, './', dir)
+const resolve = dir => path.join(__dirname, './', dir)
 
 module.exports = {
   baseUrl: '/',
@@ -37,7 +37,7 @@ module.exports = {
     resolve: {
       alias: {
         '@': resolve('src'),
-        '~': resolve('src'),
+        '~': resolve('src')
       }
     },
     plugins: [
@@ -55,15 +55,18 @@ module.exports = {
      * 而且预渲染时生成的 prefetch 标签是 modern 版本的，低版本浏览器是不需要的
      */
     config.plugins.delete('preload')
+    
     config.plugins.delete('prefetch')
+    
     config.module
       .rule('svg')
       .exclude.add(resolve('src/icons'))
       .end()
+    
     config.module
       .rule('icons')
       .test(/\.svg$/)
-      .include.add(resolve('src/icons'))
+      .include.add(resolve('src/assets/icons'))
       .end()
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')
@@ -71,11 +74,29 @@ module.exports = {
         symbolId: 'icon-[name]'
       })
       .end()
+    
+    // 项目所有scss文件均可调用scss变量
+    config.module
+      .rule('scss')
+      .oneOfs
+      .store
+      .forEach(item => {
+        item
+          .use('sass-resources-loader')
+          .loader('sass-resources-loader')
+          .options({
+            resources: [resolve('src/assets/style/variables.scss'), resolve('src/assets/style/mixins.scss')]
+          })
+          .end()
+      })
+    
     // 解决 cli3 热更新失效 https://github.com/vuejs/vue-cli/issues/1559
     config.resolve
       .symlinks(true)
+    
     config
       .when(process.env.NODE_ENV === 'development', config => config.devtool('source-map'))
+    
     config
       .when(process.env.NODE_ENV !== 'development',
         config => {

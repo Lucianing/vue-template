@@ -1,33 +1,23 @@
 <template>
-  <div></div>
+  <div class="layout-wrapper">
+    <div class="main">
+      <TopNav />
+      <div class="main-content">
+        <router-view />
+      </div>
+    </div>
+    <Sidebar />
+  </div>
 </template>
 
-<script type="text/ecmascript-6">
-export default {
-  name: 'Layout',
-  
-  components: {},
-  
-  props: {},
-  
-  data() {
-    return {}
-  },
-  
-  computed: {},
-  
-  watch: {},
-  
-  created() {},
-  
-  mounted() {},
-  
-  destroyed() {},
-  
-  methods: {}
-}
-</script>
+<script
+  src="./layout.js"
+  type="text/ecmascript-6"
+/>
 
-<style rel="stylesheet/scss" lang="scss" scoped>
-
-</style>
+<style
+  src="./layout.scss"
+  rel="stylesheet/scss"
+  lang="scss"
+  scoped
+/>
