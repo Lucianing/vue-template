@@ -5,7 +5,7 @@
   @require:
 -->
 <template>
-  <div></div>
+  <div class="top-nav"></div>
 </template>
 
 <script
