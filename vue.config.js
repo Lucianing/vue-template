@@ -13,8 +13,6 @@ const resolve = dir => path.join(__dirname, './', dir)
 
 module.exports = {
   baseUrl: '/',
-  outputDir: 'dist',
-  assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV !== 'production',
   productionSourceMap: false,
   parallel: require('os').cpus().length > 1, // 多进程编译
@@ -60,7 +58,7 @@ module.exports = {
     
     config.module
       .rule('svg')
-      .exclude.add(resolve('src/icons'))
+      .exclude.add(resolve('src/assets/icons'))
       .end()
     
     config.module

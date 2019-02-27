@@ -9,12 +9,10 @@ module.exports = {
   },
   extends: [
     'plugin:vue/recommended',
-    'eslint:recommended',
-    'plugin:vue/essential',
-    '@vue/standard'
+    'plugin:vue/essential'
   ],
   plugins: [
-    'html'
+    'vue'
   ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -22,8 +20,5 @@ module.exports = {
     'array-bracket-spacing': [2, 'never'],
     'space-before-function-paren': [2, 'never'],
     'no-trailing-spaces': [2, { 'skipBlankLines': true }]
-  },
-  parserOptions: {
-    parser: 'babel-eslint'
   }
 }
