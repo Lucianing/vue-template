@@ -5,7 +5,11 @@
   @require:
 -->
 <template>
-  <div class="top-nav"></div>
+  <div class="top-nav">
+    <span class="toggle-icon">
+      <svg-icon icon-class="menu" />
+    </span>
+  </div>
 </template>
 
 <script

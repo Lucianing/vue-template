@@ -5,6 +5,7 @@
  */
 
 import Vue from 'vue'
+import '@/assets/icons'
 import * as components from './index'
 
 Object.keys(components).forEach(key => Vue.component(key, components[key]))
