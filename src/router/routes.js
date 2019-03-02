@@ -3,7 +3,7 @@
  * @author: lzc
  * @date:   2019-02-27
  */
-import layout from '@/layout'
+import layout from '@/layout/default'
 
 export default [
   {

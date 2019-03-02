@@ -5,13 +5,15 @@
  */
 import Sidebar from './components/sidebar'
 import TopNav from './components/top-nav'
+import Footer from './components/footer'
 
 export default {
   name: 'Layout',
 
   components: {
     Sidebar,
-    TopNav
+    TopNav,
+    Footer
   },
 
   props: {},
