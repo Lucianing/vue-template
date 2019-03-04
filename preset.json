@@ -1,0 +1,17 @@
+{
+  "useConfigFiles": true,
+  "router": true,
+  "routerHistoryMode": true,
+  "vuex": true,
+  "plugins": {
+    "@vue/cli-plugin-babel": {},
+    "@vue/cli-plugin-eslint": {
+      "config": "base",
+      "lintOn": [
+        "save"
+      ]
+    },
+    "vue-cli-plugin-cloud-template": {},
+    "vue-cli-plugin-cloud-template-generator": {}
+  }
+}
